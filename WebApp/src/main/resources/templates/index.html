@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gcibelo Bakery Store</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="Support/css/homepage.css">
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+    /* Add your custom styles here */
+    .jumbotron {
+        background-image: url('assest/images/homeImage.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center; /* Add this line */
+        color: #fff;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      
+      
+
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+
+    .product-card img {
+        width: 400px;
+        height: 400px; 
+        object-fit: cover;
+      }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg  bg-dark navbar-dark" >
+    <a class="navbar-brand" href="#">My Store</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active mt-0">
+          <a class="navbar-brand" href="#"><img src="assest/images/logo.svg" class="img mt-0" width="54" height="46" alt="Cinque Terre" > </a>
+        </li>
+          <li class="nav-item">
+              <a class="nav-link" href="cart.html">Products</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="view-cart">
+                  <i class="fas fa-shopping-cart"></i>
+              </a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="login.html">login</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Jumbotron -->
+  <!-- Jumbotron -->
+<div class="jumbotron bg-image d-flex flex-column justify-content-center align-items-center text-dark" style="height: 500px;">
+    <h1>Welcome to My Store</h1>
+    <p>Your one-stop shop for all your needs</p>
+    <a class="btn btn-primary" href="cart.html" role="button">Shop Now</a>
+  </div>
+  
+  <!---end Jumbotron-->
+  <!-- Key future fuction-->
+  <section class="ftco-section mt-5">
+    <div class="container">
+        <div class="row no-gutters ftco-services">
+            <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate fadeInUp ftco-animated">
+                <div class="media block-6 services mb-md-0 mb-4">
+                    <div class="icon bg-color-1 active d-flex justify-content-center align-items-center mb-2 text-center">
+                        <span class="flaticon-shipped">
+                            <img src="assest/icons/truck.svg" alt="Bootstrap" width="32" height="32">
+                            <ion-icon name="car-siren-outline"></ion-icon>
+                        </span>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="heading">delivery</h3>
+                        <span>Free over R100</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate fadeInUp ftco-animated">
+                <div class="media block-6 services mb-md-0 mb-4">
+                    <div class="icon bg-color-2 d-flex justify-content-center align-items-center mb-2 image1 text-center">
+                        <span class="flaticon-diet">
+                            <img src="assest/icons/cookie.svg" alt="Bootstrap" width="32" height="32">
+                        </span>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="heading">Fresh</h3>
+                        <span>Freshly baked</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate fadeInUp ftco-animated">
+                <div class="media block-6 services mb-md-0 mb-4">
+                    <div class="icon bg-color-3 d-flex justify-content-center align-items-center mb-2 text-center">
+                        <span class="flaticon-award">
+                            <img src="assest/images/approval-symbol-in-badge-svgrepo-com.svg" alt="Bootstrap" width="32" height="32">
+                        </span>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="heading">Quality</h3>
+                        <span>Quality Products</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate fadeInUp ftco-animated">
+                <div class="media block-6 services mb-md-0 mb-4">
+                    <div class="icon bg-color-4 d-flex justify-content-center align-items-center mb-2 text-center">
+                        <span class="flaticon-customer-service">
+                            <img src="assest/images/support-svgrepo-com.svg" alt="Bootstrap" width="32" height="32">
+                        </span>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="heading">Support</h3>
+                        <span>24/7 Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+   <!-- end Key future fuction-->
+  <!-- Featured Products -->
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="product-card">
+          <h3>Roman Cream</h3>
+          <p>A rich blend of vanilla and cream, our Roman Cream cookies are a delightful treat for any occasion.</p>
+          <br>
+          <img src="assest/images/Romany Cream.jpg" class="img-fluid" alt="Roman Cream">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="product-card">
+          <h3>Ginger Biscuits</h3>
+          <p>Experience the warmth of ginger in every bite with our Ginger Biscuits, perfect for cozy evenings with a cup of tea.</p>
+          <img src="assest/images/Ginger Biscuits.jpg" class="img-fluid" alt="Ginger Biscuits">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="product-card">
+          <h3>Soft Scones</h3>
+          <p>Indulge in the buttery goodness of our Soft Scones, a classic English pastry that melts in your mouth.</p>
+          <br>
+          <img src="assest/images/Soft scones.jpg" class="img-fluid" alt="Soft Scones">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--End start-->
+  <footer class="bg-dark py-5">
+    <div class="container">
+      <div class="row text-white g-4">       
+
+        <div class = "col-md-6 col-lg-3">
+            <h5 class = "fw-light">Links</h5>
+            <ul class = "list-unstyled">
+                <li class = "my-3">
+                    <a href = "index.html" class = "text-white text-decoration-none text-white">
+                        <i class = "fas fa-chevron-right me-1"></i> Home
+                    </a>
+                </li>
+                <li class = "my-3">
+                    <a href = "#" class = "text-white text-decoration-none text-white">
+                        <i class = "fas fa-chevron-right me-1"></i> Collection
+                    </a>
+                </li>
+                <li class = "my-3">
+                    <a href = "#" class = "text-white text-decoration-none text-white">
+                        <i class = "fas fa-chevron-right me-1"></i> Blogs
+                    </a>
+                </li>
+                <li class = "my-3">
+                    <a href = "about.html" class = "text-white text-decoration-none text-white">
+                        <i class = "fas fa-chevron-right me-1"></i> About Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <h5 class="fw-light mb-3 text-center">Contact Us</h5>
+            <div class="d-flex justify-content-center align-items-center my-2 text-white">
+                <span class="me-3">
+                    <i class="fas fa-map-marked-alt"></i>
+                </span>
+                <span class="fw-light">
+                    Nilgiri 29 Milan Park Bethal 2310
+                </span>
+            </div>
+            <div class="d-flex justify-content-center align-items-center my-2 text-white">
+                <span class="me-3">
+                    <i class="fas fa-envelope"></i>
+                </span>
+                <span class="fw-light">
+                    gcibelobakery.support@gmail.com
+                </span>
+            </div>
+            <div class="d-flex justify-content-center align-items-center my-2 text-white">
+                <span class="me-3">
+                    <i class="fas fa-phone-alt"></i>
+                </span>
+                <span class="fw-light">
+                    +27 71 644 2406
+                </span>
+            </div>
+        </div>
+        
+
+        <div class="col-md-6 col-lg-3 text-center"> <!-- Added text-center class -->
+            <h5 class="fw-light mb-3">Follow Us</h5>
+            <div>
+                <ul class="list-unstyled d-flex justify-content-center"> <!-- Added justify-content-center class -->
+                    <li>
+                        <a href="#" class="text-white text-decoration-none text-muted fs-4 me-4">
+                            <img src="assest/icons/tiktok.svg" alt="" style="width: 40px; height: 40px;">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white text-decoration-none text-muted fs-4 me-4">
+                            <img src="assest/icons/instagram.svg" alt="" style="width: 40px; height: 40px;">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white text-decoration-none text-muted fs-4 me-4">
+                            <img src="assest/icons/twitter-x.svg" alt="" style="width: 40px; height: 40px;">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="text-white text-decoration-none text-muted fs-4 me-4">
+                            <img src="assest/icons/facebook.svg" alt="" style="width: 40px; height: 40px;">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://wa.me/27716442406" class="text-white text-decoration-none text-muted fs-4 me-4">
+                            <img src="assest/icons/whatsapp.svg" alt="" style="width: 40px; height: 40px;">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+</div>
+  </footer>
+  <!--End end-->
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

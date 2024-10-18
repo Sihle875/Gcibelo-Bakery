@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bakery Registration Form</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="Support/css/homepage.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light grey background */
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Gcibelo Bakery Registration Form</h5>
+                    <form action="/submitForm" method="post" onsubmit="return validateForm()">
+                        <div class="form-group">
+                            <label for="firstname">First name:</label>
+                            <input type="text" class="form-control" id="firstname" name="firstname">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Last name:</label>
+                            <input type="text" class="form-control" id="lastname" name="lastname">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone number:</label>
+                            <input type="tel" class="form-control" id="phone" name="phone">
+                            <small id="phoneError" class="text-danger"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" class="form-control" id="password" name="password">
+                            <small id="passwordHelp" class="form-text text-muted">Password must be at least 8 characters long and contain at least one number and one special character.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password:</label>
+                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
+                            <small id="passwordError" class="text-danger"></small>
+                        </div>
+                        <div class="form-group mt-3"> <!-- Added margin-top (mt-3) for space -->
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function validateForm() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
+        var phone = document.getElementById("phone").value;
+
+        var phoneError = document.getElementById("phoneError");
+        var passwordError = document.getElementById("passwordError");
+
+        phoneError.textContent = "";
+        passwordError.textContent = "";
+
+        if (password.length < 8) {
+            passwordError.textContent = "Password must be at least 8 characters long.";
+            return false;
+        }
+
+        // Regex to check for at least one digit and one special character
+        var regex = /^(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])/;
+        if (!regex.test(password)) {
+            passwordError.textContent = "Password must contain at least one number and one special character.";
+            return false;
+        }
+
+        if (password !== confirmPassword) {
+            passwordError.textContent = "Passwords do not match.";
+            return false;
+        }
+
+        if (phone.length !== 10) {
+            phoneError.textContent = "Phone number must be exactly 10 digits.";
+            return false;
+        }
+
+        return true;
+    }
+</script>
+</body>
+</html>

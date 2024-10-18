@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Page</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    /* Style for product cards */
+    .product-card {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .product-card img {
+      width: 350px;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    /* Style for cart */
+    .cart {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+<!-- nav bar -->
+<!-- Navbar -->
+ <nav class="navbar navbar-expand-lg  bg-light navbar-light" >
+    <a class="navbar-brand" href="/">My Store</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ">
+        <li class="nav-item active mt-0">
+          <a class="navbar-brand" href="#"><img src="assest/images/logo.svg" class="img mt-0" width="54" height="46" alt="Cinque Terre" > </a>
+        </li>
+        <li class="nav-item ml-auto">
+          <a class="nav-link" href="#">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="view-cart">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+        </li>
+        <li class="nav-item ml-auto">
+          <a class="nav-link" href="about.html">About Us</a>
+        </li>
+      </ul>
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+        <th:block th:if="${user != null}">
+          <li class="nav-item ml-auto dropdown"> <!-- Add ml-auto to align the item to the right -->
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+              <span th:text="${user.getFirstname()}"></span> <span th:text="${user.getLastname()}"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/profile">Edit Profile</a>
+              <a class="dropdown-item" href="/delete-profile">Delete Account</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/logout">Logout</a>
+            </div>
+          </li>
+        </th:block>
+      </ul>
+    </div>
+  </nav>
+
+<!-- end of nav bar-->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="product-card">
+        <h3>Romany Cream</h3>
+        <p><b>Romany Creams</b>: Indulge in the rich, chocolaty embrace of our Romany Creams. A luxurious treat for any moment!</p>
+        <img src="assest/images/Romany Cream.jpg" class="img-fluid" alt="Romany Cream">
+        <form action="/add" method="post">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="size" id="size5L_Romany" value="5L" >
+            <label class="form-check-label" for="size5L_Romany">5L - R260</label>
+            <input type="hidden" name="product_name" value="Romany Cream">
+            <input type="hidden" name="price" value="260">
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="size" id="size10L_Romany" value="10L">
+            <label class="form-check-label" for="size10L_Romany">10L - R450</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="size" id="size20L_Romany" value="20L">
+            <label class="form-check-label" for="size20L_Romany">20L - R800</label>
+          </div>
+          <input type="submit" class="btn btn-primary add-to-cart" value="Add to Cart">
+        </form>
+
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="product-card">
+        <h3>Ginger Biscuits</h3>
+        <p><b>Ginger Biscuits</b>: Warm your soul with our spicy-sweet ginger biscuits. A cozy treat for any moment!</p>
+        <img src="assest/images/Ginger Biscuits.jpg" class="img-fluid" alt="Ginger Biscuits">
+        <form action="/add" method="post">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="size" id="size5L_Ginger" value="5L" >
+            <label class="form-check-label" for="size5L_Ginger">5L - R200</label>
+            <input type="hidden" name="product_name" value="Ginger Biscuits">
+            <input type="hidden" name="price" value="200">
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="size" id="size10L_Ginger" value="10L">
+            <label class="form-check-label" for="size10L_Ginger">10L - R350</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="size" id="size20L_Ginger" value="20L">
+            <label class="form-check-label" for="size20L_Ginger">20L - R600</label>
+          </div>
+          <input type="submit" class="btn btn-primary add-to-cart" value="Add to Cart">
+        </form>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="product-card">
+        <h3>Assorted Biscuits</h3>
+        <p><b>Savor our Assorted Biscuits!</b> A symphony of flavors, baked to perfection. Your perfect snack companion!</p>
+        <img src="assest/images/Assorted Biscuits.jpg" class="img-fluid" alt="Assorted Biscuits">
+        <form action="/add" method="post">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="size" id="size5L_Assorted" value="5L" >
+            <label class="form-check-label" for="size5L_Assorted">5L - R350</label>
+            <input type="hidden" name="product_name" value="Assorted Biscuits">
+            <input type="hidden" name="price" value="350">
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="size" id="size10L_Assorted" value="10L">
+            <label class="form-check-label" for="size10L_Assorted">10L - R600</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="size" id="size20L_Assorted" value="20L">
+            <label class="form-check-label" for="size20L_Assorted">20L - R1000</label>
+          </div>
+          <input type="submit" class="btn btn-primary add-to-cart" value="Add to Cart">
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="product-card">
+        <h3>Coconut Biscuits</h3>
+        <p><b>Taste the tropics with our Coconut Biscuits!</b> A sweet escape in every bite. Get yours now! </p>
+        <img src="assest/images/Coconut Biscuits.jpg" class="img-fluid" alt="Coconut Biscuits">
+        <form action="/add" method="post">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="size" id="size5L_Coconut" value="5L" >
+            <label class="form-check-label" for="size5L_Coconut">5L - R200</label>
+            <input type="hidden" name="product_name" value="Coconut Biscuits">
+            <input type="hidden" name="price" value="200">
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="size" id="size10L_Coconut" value="10L">
+            <label class="form-check-label" for="size10L_Coconut">10L - R350</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="size" id="size20L_Coconut" value="20L">
+            <label class="form-check-label" for="size20L_Coconut">20L - R600</label>
+          </div>
+          <input type="submit" class="btn btn-primary add-to-cart" value="Add to Cart">
+        </form>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="product-card">
+        <h3>Strawberry Lovers</h3>
+        <p><b>Strawberry Lover’s Delight!</b> Dive into a sweet, fruity bliss with every bite. Pure berry joy awaits! </p>
+        <img src="assest/images/Strawberry Lovers.jpg" class="img-fluid" alt="Strawberry Lovers">
+        <form action="/add" method="post">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="size" id="size5L_Strawberry" value="5L" >
+            <label class="form-check-label" for="size5L_Strawberry">5L - R260</label>
+            <input type="hidden" name="product_name" value="Strawberry Lovers">
+            <input type="hidden" name="price" value="260">
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="size" id="size10L_Strawberry" value="10L">
+            <label class="form-check-label" for="size10L_Strawberry">10L - R450</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="size" id="size20L_Strawberry" value="20L">
+            <label class="form-check-label" for="size20L_Strawberry">20L - R800</label>
+          </div>
+          <input type="submit" class="btn btn-primary add-to-cart" value="Add to Cart">
+        </form>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="product-card">
+        <h3>Soft Scones</h3>
+        <p><b>Soft Scones</b>: Delight in our fluffy scones, golden-brown with a hint of sweetness. Perfect for tea time!</p>
+        <img src="assest/images/Soft scones.jpg" class="img-fluid" alt="Soft Scones">
+        <form action="/add" method="post">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="size" id="size5L_Scones" value="5L">
+            <label class="form-check-label" for="size5L_Scones">5L - R220</label>
+            <input type="hidden" name="product_name" value="Soft Scones">
+            <input type="hidden" name="price" value="220">
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="size" id="size10L_Scones" value="10L">
+            <label class="form-check-label" for="size10L_Scones">10L - R400</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="size" id="size20L_Scones" value="20L">
+            <label class="form-check-label" for="size20L_Scones">20L - R650</label>
+          </div>
+          <input type="submit" class="btn btn-primary add-to-cart" value="Add to Cart">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- Cart Section -->
+
+
+<!-- Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
